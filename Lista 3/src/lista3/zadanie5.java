@@ -11,7 +11,37 @@ public class zadanie5 {
 		System.out.print("Enter the value: ");
 		String value = sc.nextLine();
 		
-		if (value.length()==11)
+		if(value.contains("."))
+		{
+			 String[] data = value.split("[.]");
+			 
+			 int dzien=Integer.valueOf(data[0]);
+			 int miesiac=Integer.valueOf(data[1]);
+			 int rok=Integer.valueOf(data[2]);
+			 Dane(dzien, miesiac, rok);
+		}
+		else if(value.contains(" "))
+		{
+			String[] in = value.split(" ");
+			String imie;
+			String nazwisko;
+			if(in.length==2)
+			{
+				imie=in[0];
+				nazwisko=in[1];
+				Dane(imie, nazwisko);
+			}
+			else
+			{
+				String imie2;
+				imie=in[0];
+				imie2=in[1];
+				nazwisko=in[2];
+				Dane(imie,imie2,nazwisko);
+			}
+		}
+		
+		else if (value.length()==11)
 		{
 			System.out.print("This value is PESEL.");
 			Dane(value);
@@ -26,7 +56,7 @@ public class zadanie5 {
 		
 		else
 		{
-			System.out.print("This value neither age nor PESEL.");
+			System.out.print("not good.");
 		}
 		
 		
@@ -46,43 +76,55 @@ public class zadanie5 {
 	
 	public static void Dane(String imie,String nazwisko) {
 		
-		System.out.println("Urodziles sie w " + r + " roku ");
+		System.out.println("Imie: " + imie+"  Nazwisko: "+ nazwisko);
 		}
 	
 	public static void Dane(String imie1,String imie2, String nazwisko) {
 		
-		System.out.println("Urodziles sie w " + r + " roku ");
+		System.out.println("Pierwsze imie: "+ imie1 + "  Drugie imie: " +imie2+"  Nazwisko: "+ nazwisko);
 		}
 	
 	public static void Dane(int dzien, int miesiac, int rok) {
-	String m=0;
+	String m="";
 		switch(miesiac)
 		{
-		case 1:
-			m="stycznia";
-		case 2:
-			m="lutego";
-		case 3:
-			m="marca";
-		case 4:
-			m="kwietnia";
-		case 5:
-			m="maja";
-		case 6:
-			m="czerwca";
-		case 7:
-			m="lipca";
-		case 8:
-			m="sierpnia";
-		case 9:
-			m="wrzesnia";
-		case 10:
-			m="padziernika";
-		case 11:
-			m="listopada";
-		case 12:
-			m="grudnia";
+			case 1:
+				m="stycznia";
+				break;
+			case 2:
+				m="lutego";
+				break;
+			case 3:
+				m="marca";
+				break;
+			case 4:
+				m="kwietnia";
+				break;
+			case 5:
+				m="maja";
+				break;
+			case 6:
+				m="czerwca";
+				break;
+			case 7:
+				m="lipca";
+				break;
+			case 8:
+				m="sierpnia";
+				break;
+			case 9:
+				m="wrzesnia";
+				break;
+			case 10:
+				m="padziernika";
+				break;
+			case 11:
+				m="listopada";
+				break;
+			case 12:
+				m="grudnia";
+				break;
 		}
 		System.out.println("Urodziles sie " + dzien+" "+ m+" " + rok + " roku ");
-		}
+	}
 }
