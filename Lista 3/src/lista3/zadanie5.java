@@ -15,43 +15,43 @@ public class zadanie5 {
 		{
 			 String[] data = value.split("[.]");
 			 
-			 int dzien=Integer.valueOf(data[0]);
-			 int miesiac=Integer.valueOf(data[1]);
-			 int rok=Integer.valueOf(data[2]);
-			 Dane(dzien, miesiac, rok);
+			 int day=Integer.valueOf(data[0]);
+			 int month=Integer.valueOf(data[1]);
+			 int year=Integer.valueOf(data[2]);
+			 Data(day, month, year);
 		}
 		else if(value.contains(" "))
 		{
 			String[] in = value.split(" ");
-			String imie;
-			String nazwisko;
+			String name;
+			String surname;
 			if(in.length==2)
 			{
-				imie=in[0];
-				nazwisko=in[1];
-				Dane(imie, nazwisko);
+				name=in[0];
+				surname=in[1];
+				Data(name, surname);
 			}
 			else
 			{
-				String imie2;
-				imie=in[0];
-				imie2=in[1];
-				nazwisko=in[2];
-				Dane(imie,imie2,nazwisko);
+				String name2;
+				name=in[0];
+				name2=in[1];
+				surname=in[2];
+				Data(name,name2,surname);
 			}
 		}
 		
 		else if (value.length()==11)
 		{
-			System.out.print("This value is PESEL.");
-			Dane(value);
+			System.out.println("This value is PESEL.");
+			Data(value);
 		}
 		
 		else if ((value.length()>0) && (value.length()<=3))
 		{
-			System.out.print("This value is age.");
+			System.out.println("This value is age.");
 			int age=Integer.valueOf(value);
-			Dane(age);
+			Data(age);
 		}
 		
 		else
@@ -65,66 +65,66 @@ public class zadanie5 {
 		sc.close();
 	}
 	
-	public static void Dane(String pesel) {
-		System.out.println("Twoja data urodzenia to 19" + pesel.substring(0, 2) +"." + pesel.substring(2, 4) +"."+pesel.substring(4, 6));
+	public static void Data(String pesel) {
+		System.out.println("Your birth date is 19" + pesel.substring(0, 2) +"." + pesel.substring(2, 4) +"."+pesel.substring(4, 6));
 		}
 	
-	public static void Dane(int wiek) {
-		int r = 2021-wiek;
-		System.out.println("Urodziles sie w " + r + " roku ");
+	public static void Data(int age) {
+		int r = 2021-age;
+		System.out.println("You were born in " + r + " year ");
 		}
 	
-	public static void Dane(String imie,String nazwisko) {
+	public static void Data(String name,String surname) {
 		
-		System.out.println("Imie: " + imie+"  Nazwisko: "+ nazwisko);
+		System.out.println("Name: " + name+ "  Surname: "+ surname);
 		}
 	
-	public static void Dane(String imie1,String imie2, String nazwisko) {
+	public static void Data(String name1,String name2, String surname) {
 		
-		System.out.println("Pierwsze imie: "+ imie1 + "  Drugie imie: " +imie2+"  Nazwisko: "+ nazwisko);
+		System.out.println("First name: "+ name1 + "  Second name: " +name2+"  Surname: "+ surname);
 		}
 	
-	public static void Dane(int dzien, int miesiac, int rok) {
+	public static void Data(int day, int month, int year) {
 	String m="";
-		switch(miesiac)
+		switch(month)
 		{
 			case 1:
-				m="stycznia";
+				m="january ";
 				break;
 			case 2:
-				m="lutego";
+				m="february";
 				break;
 			case 3:
-				m="marca";
+				m="march";
 				break;
 			case 4:
-				m="kwietnia";
+				m="april";
 				break;
 			case 5:
-				m="maja";
+				m="may";
 				break;
 			case 6:
-				m="czerwca";
+				m="june";
 				break;
 			case 7:
-				m="lipca";
+				m="july";
 				break;
 			case 8:
-				m="sierpnia";
+				m="august";
 				break;
 			case 9:
-				m="wrzesnia";
+				m="september";
 				break;
 			case 10:
-				m="padziernika";
+				m="october";
 				break;
 			case 11:
-				m="listopada";
+				m="november";
 				break;
 			case 12:
-				m="grudnia";
+				m="december ";
 				break;
 		}
-		System.out.println("Urodziles sie " + dzien+" "+ m+" " + rok + " roku ");
+		System.out.println("You were born  " + day +" "+ m +" " + year + " year. ");
 	}
 }

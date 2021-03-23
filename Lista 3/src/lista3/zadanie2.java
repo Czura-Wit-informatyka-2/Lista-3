@@ -61,13 +61,13 @@ public class zadanie2 {
 				}
 			}		
 		}	
-		if(result == true)
+		if(result)
 		{
-			System.out.print("Yes is an answer");
+			System.out.print("Yes is an answer.");
 		}
 		else
 		{
-			System.out.print("Nope");
+			System.out.print("No is an answer.");
 		}
 		sc.close();
 
