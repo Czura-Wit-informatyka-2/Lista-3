@@ -44,4 +44,45 @@ public class zadanie5 {
 		System.out.println("Urodziles sie w " + r + " roku ");
 		}
 	
+	public static void Dane(String imie,String nazwisko) {
+		
+		System.out.println("Urodziles sie w " + r + " roku ");
+		}
+	
+	public static void Dane(String imie1,String imie2, String nazwisko) {
+		
+		System.out.println("Urodziles sie w " + r + " roku ");
+		}
+	
+	public static void Dane(int dzien, int miesiac, int rok) {
+	String m=0;
+		switch(miesiac)
+		{
+		case 1:
+			m="stycznia";
+		case 2:
+			m="lutego";
+		case 3:
+			m="marca";
+		case 4:
+			m="kwietnia";
+		case 5:
+			m="maja";
+		case 6:
+			m="czerwca";
+		case 7:
+			m="lipca";
+		case 8:
+			m="sierpnia";
+		case 9:
+			m="wrzesnia";
+		case 10:
+			m="padziernika";
+		case 11:
+			m="listopada";
+		case 12:
+			m="grudnia";
+		}
+		System.out.println("Urodziles sie " + dzien+" "+ m+" " + rok + " roku ");
+		}
 }
